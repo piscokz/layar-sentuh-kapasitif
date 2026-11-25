@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Media pembelajaran interaktif bertahap Topik 5: Layar Sentuh Smartphone (Capacitive Touchscreen) dalam Diskusi Fisika Dasar Gaya Coulomb dan Medan Listrik.">
+  <title>Topik 5: Layar Sentuh Smartphone | Diskusi Fisika Dasar</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='5' y='2' width='22' height='28' rx='4' fill='%230ea5e9' stroke='%230f172a' stroke-width='2'/%3E%3Crect x='8' y='6' width='16' height='18' rx='2' fill='%23e0f2fe'/%3E%3Ccircle cx='16' cy='27' r='1.5' fill='%23ffffff'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a href="#main-heading" class="skip-link visually-hidden">Lompat ke konten utama</a>
+  <div id="reading-progress" aria-hidden="true"></div>
+  <div id="live-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-badge">Topik 5</span>
+        <span class="brand-title">Fisika Layar Sentuh</span>
+      </div>
+
+      <nav class="stepper-nav" aria-label="Tahapan Pembelajaran">
+        <ol class="stepper-list">
+          <li><a href="#tahap-1" class="step-link" data-step="1" aria-current="step"><span class="step-num">1</span><span class="step-label">Fenomena</span></a></li>
+          <li><a href="#tahap-2" class="step-link" data-step="2"><span class="step-num">2</span><span class="step-label">Anatomi</span></a></li>
+          <li><a href="#tahap-3" class="step-link" data-step="3"><span class="step-num">3</span><span class="step-label">Medan</span></a></li>
+          <li><a href="#tahap-4" class="step-link" data-step="4"><span class="step-num">4</span><span class="step-label">Kapasitansi</span></a></li>
+          <li><a href="#tahap-5" class="step-link" data-step="5"><span class="step-num">5</span><span class="step-label">Lab Sensor</span></a></li>
+          <li><a href="#tahap-6" class="step-link" data-step="6"><span class="step-num">6</span><span class="step-label">Isolator</span></a></li>
+          <li><a href="#tahap-7" class="step-link" data-step="7"><span class="step-num">7</span><span class="step-label">Rangkuman</span></a></li>
+        </ol>
+      </nav>
+
+      <button type="button" id="focus-mode-btn" class="btn-mode" aria-pressed="false">
+        Mode Fokus (1 Tahap)
+      </button>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="hero" aria-labelledby="main-heading">
+      <div class="hero-card">
+        <p class="eyebrow">Diskusi Fisika Dasar · Gaya Coulomb &amp; Medan Listrik</p>
+        <h1 id="main-heading" tabindex="-1">Layar Sentuh Smartphone</h1>
+        <p class="hero-subtitle"><span lang="en">Capacitive Touchscreen</span></p>
+        <p class="hero-lead">
+          Bagaimana smartphone Anda tahu tepat di mana jari menyentuh layar meski hanya berupa sentuhan sehelai bulu?
+          Ikuti 7 tahap pembelajaran interaktif ini untuk memahami peran <strong>muatan listrik</strong>, <strong>gaya Coulomb</strong>,
+          <strong>medan listrik tepi (<span lang="en">fringing field</span>)</strong>, dan <strong>perubahan kapasitansi</strong>—sekaligus menjawab seluruh pertanyaan panduan dan pertanyaan tantangan diskusi.
+        </p>
+        <div class="goal-box">
+          <span class="goal-label">Tujuan Diskusi:</span>
+          Mengidentifikasi fenomena teknologi modern yang melibatkan gaya Coulomb dan medan listrik serta menjelaskan mekanisme fisika di baliknya secara bertahap.
+        </div>
+
+        <ol class="roadmap-grid" aria-label="Peta Alur 7 Tahap">
+          <li><a href="#tahap-1" class="roadmap-card" data-step-jump="1"><span class="roadmap-num">Tahap 1</span><strong>Identifikasi Fenomena</strong><span>Tanpa tekanan mekanis</span></a></li>
+          <li><a href="#tahap-2" class="roadmap-card" data-step-jump="2"><span class="roadmap-num">Tahap 2</span><strong>Anatomi Kisi Sensor</strong><span>Kaca &amp; elektroda ITO</span></a></li>
+          <li><a href="#tahap-3" class="roadmap-card" data-step-jump="3"><span class="roadmap-num">Tahap 3</span><strong>Medan Listrik Tepi</strong><span>Gaya Coulomb &amp; polarisasi</span></a></li>
+          <li><a href="#tahap-4" class="roadmap-card" data-step-jump="4"><span class="roadmap-num">Tahap 4</span><strong>Perubahan Kapasitansi</strong><span><span lang="en">Mutual</span> vs <span lang="en">Self</span></span></a></li>
+          <li><a href="#tahap-5" class="roadmap-card" data-step-jump="5"><span class="roadmap-num">Tahap 5</span><strong>Lab Kisi Sensor 6×8</strong><span>Uji bahan &amp; <span lang="en">multi-touch</span></span></a></li>
+          <li><a href="#tahap-6" class="roadmap-card" data-step-jump="6"><span class="roadmap-num">Tahap 6</span><strong>Sarung Tangan &amp; Aplikasi</strong><span>Isolator vs konduktor</span></a></li>
+          <li><a href="#tahap-7" class="roadmap-card" data-step-jump="7"><span class="roadmap-num">Tahap 7</span><strong>Diskusi &amp; Tantangan</strong><span>Jawaban lengkap &amp; kuis</span></a></li>
+        </ol>
+      </div>
+    </section>
+
+    <div id="focus-toolbar-top" class="focus-toolbar" hidden>
+      <button type="button" class="btn-secondary focus-prev" data-focus-nav="prev">← Sebelumnya</button>
+      <span class="focus-status" id="focus-status-top">Tahap 1 dari 7</span>
+      <button type="button" class="btn-primary focus-next" data-focus-nav="next">Berikutnya →</button>
+    </div>
+
+    <div class="steps-container">
+      <!-- ==================== TAHAP 1 ==================== -->
+      <section class="step-section" id="tahap-1" data-step="1" aria-labelledby="tahap-1-heading">
+        <div class="step-header">
+          <span class="step-tag">Tahap 1 · Identifikasi Fenomena</span>
+          <h2 id="tahap-1-heading">Mengapa Sentuhan Ringan Bisa Terdeteksi Tanpa Menekan Layar?</h2>
+          <p class="step-intro">
+            Pada layar sentuh modern, Anda tidak perlu menekan kaca hingga melengkung. Kaca smartphone sangat kaku, namun tetap langsung merespons sentuhan paling ringan dari kulit jari karena sistem tidak mengukur <em>gaya tekan mekanis</em>, melainkan mendeteksi <strong>gangguan medan listrik</strong>.
+          </p>
+        </div>
+
+        <div class="callout-grid">
+          <article class="concept-card">
+            <h3>Inti Fenomena Fisika</h3>
+            <p>
+              Layar sentuh kapasitif memancarkan medan listrik lemah yang menembus sedikit di atas permukaan kaca. Ketika jari manusia menyentuh atau bahkan sangat dekat dengan kaca, tubuh manusia bertindak sebagai konduktor berisi cairan elektrolit yang ikut berinteraksi dengan medan tersebut.
+            </p>
+          </article>
+          <article class="concept-card">
+            <h3>Mengapa Tidak Perlu Tekanan?</h3>
+            <p>
+              Tidak ada dua pelat konduktor fleksibel yang harus berimpit secara fisik. Cukup terjadi kontak atau kedekatan elektrostatis antara jari dan medan listrik tepi (<span lang="en">fringing field</span>), distribusi muatan pada sensor berubah dan langsung terbaca oleh pengendali (<span lang="en">touch controller IC</span>).
+            </p>
+          </article>
+        </div>
+
+        <div class="tabs-widget" data-tabs-widget>
+          <h3>Bandingkan: Layar Kapasitif Modern vs Layar Resistif Lama</h3>
+          <div class="tablist" focusgroup="tablist nomemory" role="tablist" aria-label="Perbandingan jenis layar sentuh">
+            <button type="button" role="tab" id="t1-tab-cap" aria-selected="true" focusgroupstart>Layar Kapasitif (Modern)</button>
+            <button type="button" role="tab" id="t1-tab-res" aria-selected="false" tabindex="-1">Layar Resistif (Lama)</button>
+          </div>
+          <div class="tabpanels">
+            <div role="tabpanel" aria-labelledby="t1-tab-cap" tabindex="0">
+              <div class="tabpanel-inner">
+                <div class="split-panel">
+                  <div>
+                    <p><strong>Prinsip Kerja:</strong> Memanfaatkan medan listrik elektrostatis dan kapasitansi antar elektroda transparan di bawah kaca keras (<span lang="en">cover glass</span>).</p>
+                    <ul class="bullet-list">
+                      <li>Tidak memerlukan lenturan mekanis pada layar.</li>
+                      <li>Mendukung <span lang="en">multi-touch</span> (banyak titik sentuh sekaligus, seperti <span lang="en">pinch-to-zoom</span>).</li>
+                      <li>Membutuhkan objek konduktif/ter-<span lang="en">ground</span> agar medan listrik terganggu.</li>
+                    </ul>
+                  </div>
+                  <figure class="diagram-figure">
+                    <svg role="img" viewBox="0 0 360 190" class="inline-svg" aria-label="Penampang layar sentuh kapasitif saat jari menyentuh kaca keras dan membelokkan garis medan listrik.">
+                      <title>Diagram Penampang Layar Kapasitif</title>
+                      <rect x="20" y="96" width="320" height="24" rx="4" class="svg-glass" />
+                      <text x="180" y="112" text-anchor="middle" class="svg-label">Kaca Pelindung Kaku (Isolator)</text>
+                      <rect x="20" y="124" width="320" height="16" rx="3" class="svg-electrode-rx" />
+                      <text x="180" y="136" text-anchor="middle" class="svg-label-small">Elektroda Sensor Transparan (ITO)</text>
+                      <rect x="20" y="146" width="320" height="24" rx="4" class="svg-display" />
+                      <text x="180" y="162" text-anchor="middle" class="svg-label-small">Panel Display (OLED / LCD)</text>
+                      <path d="M145,22 C145,58 152,92 180,94 C208,92 215,58 215,22 Z" class="svg-finger" />
+                      <text x="180" y="54" text-anchor="middle" class="svg-label">Jari (Konduktor)</text>
+                      <path d="M115,124 C115,74 155,74 172,94" class="svg-field-line" />
+                      <path d="M245,124 C245,74 205,74 188,94" class="svg-field-line" />
+                      <text x="180" y="184" text-anchor="middle" class="svg-caption-svg">Sentuhan ringan mengubah medan listrik tanpa menekan kaca</text>
+                    </svg>
+                    <figcaption>Kaca tetap kaku; perubahan medan listrik tepi oleh jari langsung terdeteksi.</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+            <div role="tabpanel" aria-labelledby="t1-tab-res" hidden="until-found">
+              <div class="tabpanel-inner">
+                <div class="split-panel">
+                  <div>
+                    <p><strong>Prinsip Kerja:</strong> Memakai dua lapisan konduktif fleksibel yang dipisahkan rongga udara/titik pemisah tipis. Pengguna harus <em>menekan</em> lapisan atas hingga menyentuh lapisan bawah.</p>
+                    <ul class="bullet-list">
+                      <li>Mengandalkan deformasi mekanis dan arus kontak resistif (pembagi tegangan).</li>
+                      <li>Bisa ditekan dengan benda apa saja (kuku, ujung pulpen, sarung tangan tebal).</li>
+                      <li>Umumnya hanya mendukung satu titik sentuh (<span lang="en">single-touch</span>) dan mudah aus.</li>
+                    </ul>
+                  </div>
+                  <figure class="diagram-figure">
+                    <svg role="img" viewBox="0 0 360 190" class="inline-svg" aria-label="Penampang layar sentuh resistif yang melengkung saat ditekan agar dua lapisan konduktif saling bersentuhan.">
+                      <title>Diagram Penampang Layar Resistif</title>
+                      <path d="M20,90 Q140,90 180,108 Q220,90 340,90 L340,102 Q220,102 180,118 Q140,102 20,102 Z" class="svg-glass" />
+                      <text x="85" y="84" class="svg-label-small">Film Atas Fleksibel</text>
+                      <circle cx="95" cy="116" r="3" class="svg-dot" />
+                      <circle cx="265" cy="116" r="3" class="svg-dot" />
+                      <rect x="20" y="122" width="320" height="14" rx="2" class="svg-electrode-tx" />
+                      <text x="180" y="133" text-anchor="middle" class="svg-label-small">Lapisan Konduktif Bawah</text>
+                      <rect x="20" y="142" width="320" height="24" rx="4" class="svg-display" />
+                      <text x="180" y="158" text-anchor="middle" class="svg-label-small">Panel Display</text>
+                      <path d="M168,26 L192,26 L186,98 L174,98 Z" class="svg-stylus" />
+                      <text x="180" y="18" text-anchor="middle" class="svg-label">Gaya Tekan Mekanis</text>
+                      <text x="180" y="184" text-anchor="middle" class="svg-caption-svg">Dua lapisan harus bersentuhan fisik akibat tekanan</text>
+                    </svg>
+                    <figcaption>Layar resistif membutuhkan tekanan fisik agar lapisan atas dan bawah berimpit.</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <caption>Perbandingan karakteristik fisik layar sentuh kapasitif dan layar sentuh resistif</caption>
+            <thead>
+              <tr>
+                <th scope="col">Aspek</th>
+                <th scope="col">Layar Kapasitif (Smartphone Modern)</th>
+                <th scope="col">Layar Resistif (Perangkat Lama)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Mekanisme Deteksi</th>
+                <td>Perubahan medan listrik &amp; kapasitansi elektrostatis</td>
+                <td>Kontak mekanis dua lapisan penghantar (pembagi tegangan)</td>
+              </tr>
+              <tr>
+                <th scope="row">Gaya Tekan</th>
+                <td>Hampir nol (sentuhan ringan atau sangat dekat)</td>
+                <td>Memerlukan tekanan fisik nyata agar film melentur</td>
+              </tr>
+              <tr>
+                <th scope="row"><span lang="en">Multi-Touch</span></th>
+                <td>Ya, akurat hingga 10+ jari bersamaan</td>
+                <td>Terbatas (umumnya hanya 1 titik)</td>
+              </tr>
+              <tr>
+                <th scope="row">Ketajaman Gambar</th>
+                <td>Tinggi (&gt;90% cahaya tembus karena kaca tunggal)</td>
+                <td>Lebih redup akibat banyak rongga dan lapisan plastik</td>
+              </tr>
+              <tr>
+                <th scope="row">Respons Sarung Tangan</th>
+                <td>Gagal pada bahan isolator tebal (butuh benang konduktif)</td>
+                <td>Tetap berfungsi dengan benda apa pun yang bisa menekan</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ==================== TAHAP 2 ==================== -->
+      <section class="step-section" id="tahap-2" data-step="2" aria-labelledby="tahap-2-heading">
+        <div class="step-header">
+          <span class="step-tag">Tahap 2 · Anatomi Sensor</span>
+          <h2 id="tahap-2-heading">Susunan Lapisan Layar: Kaca Pelindung &amp; Kisi Elektroda ITO</h2>
+          <p class="step-intro">
+            Di balik permukaan kaca yang tampak mulus, terdapat susunan berlapis konduktor transparan dan isolator dielektrik berskala mikrometer. Geser pemisah lapisan di bawah dan klik tiap lapisan untuk melihat sifat kelistrikan serta fungsinya.
+          </p>
+        </div>
+
+        <div class="anatomy-workbench">
+          <div class="anatomy-visual">
+            <div class="slider-control">
+              <label for="explode-slider">Pemisahan Lapisan (<span lang="en">Exploded View</span>): <output id="explode-out" for="explode-slider">45</output>%</label>
+              <input id="explode-slider" type="range" min="0" max="100" step="1" value="45">
+            </div>
+
+            <div class="layer-stack" id="layer-stack" style="--explode-px: 10px;">
+              <button type="button" class="layer-card layer-cover" data-layer="cover" style="--layer-idx: 0;" aria-pressed="true">
+                <span class="layer-order">1</span>
+                <span class="layer-name">Kaca Pelindung (<span lang="en">Cover Glass</span>)</span>
+                <span class="layer-type">Isolator / Dielektrik</span>
+              </button>
+              <button type="button" class="layer-card layer-rx" data-layer="rx" style="--layer-idx: 1;" aria-pressed="false">
+                <span class="layer-order">2</span>
+                <span class="layer-name">Elektroda Baris Rx (<span lang="en">Receiver</span>)</span>
+                <span class="layer-type">Konduktor ITO</span>
+              </button>
+              <button type="button" class="layer-card layer-dielectric" data-layer="dielectric" style="--layer-idx: 2;" aria-pressed="false">
+                <span class="layer-order">3</span>
+                <span class="layer-name">Lapisan Isolator Dielektrik Tipis</span>
+                <span class="layer-type">Isolator Pemisah</span>
+              </button>
+              <button type="button" class="layer-card layer-tx" data-layer="tx" style="--layer-idx: 3;" aria-pressed="false">
+                <span class="layer-order">4</span>
+                <span class="layer-name">Elektroda Kolom Tx (<span lang="en">Transmitter</span>)</span>
+                <span class="layer-type">Konduktor ITO</span>
+              </button>
+              <button type="button" class="layer-card layer-display" data-layer="display" style="--layer-idx: 4;" aria-pressed="false">
+                <span class="layer-order">5</span>
+                <span class="layer-name">Panel Display (<span lang="en">OLED</span> / <span lang="en">LCD</span>)</span>
+                <span class="layer-type">Sumber Gambar</span>
+              </button>
+            </div>
+          </div>
+
+          <aside class="inspector-card" id="layer-inspector" aria-label="Detail Lapisan Terpilih">
+            <span class="inspector-badge" id="layer-badge">Lapisan 1 · Isolator Dielektrik</span>
+            <h3 id="layer-title">Kaca Pelindung (<span lang="en">Cover Glass</span>)</h3>
+            <dl class="inspector-meta">
+              <div>
+                <dt>Material</dt>
+                <dd id="layer-material">Aluminosilikat diperkuat (contoh: Gorilla Glass), konstanta dielektrik εᵣ ≈ 5–7</dd>
+              </div>
+              <div>
+                <dt>Sifat Listrik</dt>
+                <dd id="layer-conductivity">Isolator transparan — tidak mengalirkan arus DC, tetapi dapat ditembus medan listrik AC</dd>
+              </div>
+              <div>
+                <dt>Peran Fisika</dt>
+                <dd id="layer-role">Menjaga elektroda ITO tetap aman sekaligus menjadi medium dielektrik tempat medan listrik tepi (<span lang="en">fringing field</span>) menjalar ke permukaan jari.</dd>
+              </div>
+            </dl>
+            <div class="grid-hint">
+              <strong>Mengapa Elektroda Tidak Terlihat?</strong>
+              <p>
+                Elektroda baris <strong>Rx</strong> dan kolom <strong>Tx</strong> dibuat dari <strong>ITO (<span lang="en">Indium Tin Oxide</span>)</strong>, semikonduktor/konduktor oksida tipis yang tetap menghantarkan muatan listrik sekaligus tembus pandang (&gt;90% cahaya tampak lolos). Di tiap perpotongan baris Rx dan kolom Tx terbentuk satu simpul kapasitor mikro!
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- ==================== TAHAP 3 ==================== -->
+      <section class="step-section" id="tahap-3" data-step="3" aria-labelledby="tahap-3-heading">
+        <div class="step-header">
+          <span class="step-tag">Tahap 3 · Muatan, Gaya Coulomb, &amp; Medan Listrik</span>
+          <h2 id="tahap-3-heading">Hubungan Jari Manusia, Muatan Listrik, dan Medan Listrik Tepi</h2>
+          <p class="step-intro">
+            Ketika pengontrol layar menyuplai pulsa tegangan ke elektroda <strong>Tx</strong>, muatan positif dan negatif terpisah di antara simpul kisi. Dekatkan jari pada simulasi di bawah untuk mengamati bagaimana <strong>gaya Coulomb</strong> mempolarisasi muatan di ujung jari dan membelokkan garis medan listrik.
+          </p>
+        </div>
+
+        <div class="formula-row">
+          <article class="formula-card">
+            <h3>Hukum Coulomb</h3>
+            <p class="equation" aria-label="F vektor sama dengan k dikali q1 q2 per r kuadrat kali r topi">
+              <span class="eq-main"><span class="vec">F</span> = k · (q₁ · q₂) / r² · <span class="hat">r</span></span>
+            </p>
+            <p class="eq-note">
+              Dengan <code>k ≈ 8,99 × 10⁹ N·m²/C²</code>. Gaya listrik antar muatan berbanding terbalik dengan kuadrat jarak <code>r²</code>—semakin dekat jari ke elektroda, semakin kuat gaya tarik-menarik elektrostatisnya.
+            </p>
+          </article>
+          <article class="formula-card">
+            <h3>Medan Listrik &amp; Muatan Kulit</h3>
+            <p class="equation" aria-label="E vektor sama dengan F vektor per q nol">
+              <span class="eq-main"><span class="vec">E</span> = <span class="vec">F</span> / q₀</span>
+            </p>
+            <p class="eq-note">
+              Di bawah kaca, elektroda <strong>Tx (+Q)</strong> memancarkan medan listrik menuju <strong>Rx (−Q)</strong>. Tubuh manusia kaya air dan ion elektrolit (<code>Na⁺</code>, <code>K⁺</code>, <code>Cl⁻</code>) serta memiliki kapasitansi ke <span lang="en">ground</span> (<code>C_tubuh ≈ 100–200 pF</code>).
+            </p>
+          </article>
+        </div>
+
+        <div class="sim-panel">
+          <div class="sim-controls-bar">
+            <div class="slider-control">
+              <label for="finger-distance">Jarak Jari ke Kaca: <output id="distance-out" for="finger-distance">8.0</output> mm</label>
+              <input id="finger-distance" type="range" min="0" max="10" step="0.5" value="8">
+            </div>
+            <div class="sim-btn-group">
+              <button type="button" class="btn-secondary" id="btn-touch-zero">Sentuhkan Jari (0 mm)</button>
+              <button type="button" class="btn-secondary" id="btn-lift-ten">Angkat Jari (10 mm)</button>
+              <button type="button" class="btn-primary" id="toggle-field-anim">Jeda Animasi</button>
+            </div>
+          </div>
+
+          <figure class="canvas-figure">
+            <canvas id="field-canvas" width="840" height="400" role="img" aria-label="Simulasi interaktif medan listrik tepi antara elektroda Tx positif dan Rx negatif menembus kaca pelindung, serta pembelokan garis medan menuju jari manusia yang mendekat."></canvas>
+            <figcaption id="field-caption">
+              Pada jarak 8,0 mm, sebagian besar garis medan listrik melengkung utuh dari elektroda Tx (+) menuju elektroda Rx (−) sebagai medan tepi (<span lang="en">fringing field</span>).
+            </figcaption>
+          </figure>
+
+          <dl class="telemetry-strip">
+            <div class="telemetry-item">
+              <dt>Jarak Jari (d)</dt>
+              <dd id="metric-distance">8,0 mm</dd>
+            </div>
+            <div class="telemetry-item">
+              <dt>Kuat Medan di Kulit</dt>
+              <dd id="metric-efield">12%</dd>
+            </div>
+            <div class="telemetry-item">
+              <dt>Fluks Diserap Jari</dt>
+              <dd id="metric-shunt">3%</dd>
+            </div>
+            <div class="telemetry-item">
+              <dt>Kapasitansi Bersama (Cₘ)</dt>
+              <dd id="metric-cm">1,98 pF</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+
+      <!-- ==================== TAHAP 4 ==================== -->
+      <section class="step-section" id="tahap-4" data-step="4" aria-labelledby="tahap-4-heading">
+        <div class="step-header">
+          <span class="step-tag">Tahap 4 · Perubahan Kapasitansi</span>
+          <h2 id="tahap-4-heading">Bagaimana Sentuhan Jari Mengubah Kapasitansi pada Layar?</h2>
+          <p class="step-intro">
+            Kapasitansi menyatakan seberapa banyak muatan listrik <code>Q</code> yang dapat ditampung pada beda potensial <code>V</code> tertentu. Saat jari menyentuh kaca, nilai kapasitansi di titik tersebut berubah drastis dari kondisi normal sehingga lokasi sentuhan dapat dihitung presisi.
+          </p>
+        </div>
+
+        <div class="formula-banner">
+          <p class="equation">
+            <span class="eq-main">C = Q / V = εᵣ · ε₀ · (A / d)</span>
+          </p>
+          <p class="eq-note">
+            Satuan kapasitansi layar sentuh sangat kecil, yakni <strong>pikofarad</strong> (<code>1 pF = 10⁻¹² F</code>). Perubahan sekecil <code>0,2–0,5 pF</code> sudah cukup dideteksi <span lang="en">chip</span> pengendali layar dalam hitungan milidetik.
+          </p>
+        </div>
+
+        <div class="tabs-widget" data-tabs-widget>
+          <h3>Dua Arsitektur Pengukuran Kapasitansi</h3>
+          <div class="tablist" focusgroup="tablist nomemory" role="tablist" aria-label="Arsitektur pengukuran kapasitansi">
+            <button type="button" role="tab" id="t4-tab-mutual" aria-selected="true" focusgroupstart>Mutual Capacitance (Standar Multi-Touch)</button>
+            <button type="button" role="tab" id="t4-tab-self" aria-selected="false" tabindex="-1">Self Capacitance (Kapasitansi Diri)</button>
+          </div>
+          <div class="tabpanels">
+            <div role="tabpanel" aria-labelledby="t4-tab-mutual" tabindex="0">
+              <div class="tabpanel-inner">
+                <div class="split-panel">
+                  <div>
+                    <h4>Kapasitansi Bersama (Cₘ Menurun Saat Disentuh)</h4>
+                    <p>
+                      Pada smartphone modern, setiap perpotongan kolom <strong>Tx</strong> dan baris <strong>Rx</strong> membentuk satu kapasitor mikro <code>Cₘ ≈ 2,00 pF</code>.
+                    </p>
+                    <ol class="ordered-explain">
+                      <li>Pulsa tegangan pada <strong>Tx</strong> menghasilkan medan tepi yang menginduksi muatan pada <strong>Rx</strong>.</li>
+                      <li>Saat jari mendekat/menyentuh, ~20–25% garis medan listrik dibelokkan ke jari (menuju <span lang="en">ground</span>).</li>
+                      <li>Karena fluks medan yang mencapai <strong>Rx</strong> berkurang, muatan terinduksi <code>Q_Rx</code> turun.</li>
+                      <li>Sesuai <code>Cₘ = Q_Rx / V_Tx</code>, nilai <strong>Cₘ turun</strong> (misalnya dari <code>2,00 pF</code> menjadi <code>1,56 pF</code>, ΔCₘ = −0,44 pF).</li>
+                    </ol>
+                  </div>
+                  <div class="cap-diagram-box">
+                    <div class="cap-state">
+                      <span class="cap-tag">Tanpa Sentuhan</span>
+                      <strong>Cₘ = 2,00 pF</strong>
+                      <p>100% garis medan tepi Tx → Rx terhubung penuh.</p>
+                    </div>
+                    <div class="cap-arrow" aria-hidden="true">↓ Jari Menyentuh Kaca</div>
+                    <div class="cap-state cap-state-active">
+                      <span class="cap-tag">Saat Disentuh</span>
+                      <strong>Cₘ = 1,56 pF (ΔC = −0,44 pF)</strong>
+                      <p>Sebagian medan dialihkan ke tubuh (<span lang="en">shunting</span>), tiap simpul independen sehingga <strong><span lang="en">multi-touch</span> akurat</strong>!</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div role="tabpanel" aria-labelledby="t4-tab-self" hidden="until-found">
+              <div class="tabpanel-inner">
+                <div class="split-panel">
+                  <div>
+                    <h4>Kapasitansi Diri (C Meningkat Saat Disentuh)</h4>
+                    <p>
+                      Pada metode <span lang="en">self capacitance</span>, setiap elektroda diukur langsung terhadap titik referensi <span lang="en">ground</span> ponsel.
+                    </p>
+                    <ol class="ordered-explain">
+                      <li>Sebelum disentuh, elektroda hanya memiliki kapasitansi bawaan kecil <code>C₀</code> terhadap rangka logam ponsel.</li>
+                      <li>Saat jari konduktif menyentuh kaca, jari membentuk pelat kapasitor kedua yang terhubung paralel ke <span lang="en">ground</span> melalui tubuh (<code>C_jari</code>).</li>
+                      <li>Kapasitansi total elektroda menjadi <code>C_total = C₀ + C_jari</code>.</li>
+                      <li>Akibatnya <strong>C meningkat</strong> (ΔC &gt; 0). Sangat sensitif untuk deteksi melayang (<span lang="en">hover</span>), tetapi rawan bayangan (<span lang="en">ghosting</span>) saat dua jari menyentuh sekaligus.</li>
+                    </ol>
+                  </div>
+                  <div class="cap-diagram-box">
+                    <div class="cap-state">
+                      <span class="cap-tag">Tanpa Sentuhan</span>
+                      <strong>C = C₀ (Dasar)</strong>
+                      <p>Hanya kapasitansi parasitik elektroda ke rangka.</p>
+                    </div>
+                    <div class="cap-arrow" aria-hidden="true">↓ Jari Menambah Jalur Paralel</div>
+                    <div class="cap-state cap-state-active">
+                      <span class="cap-tag">Saat Disentuh</span>
+                      <strong>C = C₀ + C_jari (ΔC &gt; 0)</strong>
+                      <p>Kapasitor paralel menambah kapasitas tampung muatan listrik total.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="important-note" aria-label="Catatan Penting">
+          <strong>Catatan Penting: Mengapa Buku Ajar Sering Menjelaskan Keduanya?</strong>
+          <p>
+            Dalam diskusi fisika dasar, ada sumber yang menyebut kapasitansi <em>meningkat</em> (model <span lang="en">self capacitance</span> karena jari membentuk kapasitor paralel baru ke <span lang="en">ground</span>) dan ada yang menyebut kapasitansi antar-elektroda <em>menurun</em> (model <span lang="en">mutual capacitance</span> pada layar <span lang="en">multi-touch</span> modern karena jari mencuri sebagian fluks medan Tx→Rx). Pada praktiknya, mikrokontroler layar sama-sama memantau <strong>besar perubahan kapasitansi |ΔC|</strong> relatif terhadap nilai kalibrasi dasar!
+          </p>
+        </aside>
+      </section>
+
+      <!-- ==================== TAHAP 5 ==================== -->
+      <section class="step-section" id="tahap-5" data-step="5" aria-labelledby="tahap-5-heading">
+        <div class="step-header">
+          <span class="step-tag">Tahap 5 · Lab Simulasi Virtual</span>
+          <h2 id="tahap-5-heading">Uji Kisi Sensor 6×8: Bahan Sentuh, Sarung Tangan, &amp; Koordinat (x, y)</h2>
+          <p class="step-intro">
+            Layar smartphone memindai matriks elektroda Tx/Rx ratusan kali per detik. Pilih objek penyentuh di bawah, lalu klik atau seret jari di atas kisi sensor 6 baris × 8 kolom untuk melihat perubahan kapasitansi tiap simpul dalam pikofarad (pF).
+          </p>
+        </div>
+
+        <div class="lab-layout">
+          <div class="lab-controls">
+            <fieldset class="material-fieldset">
+              <legend>Pilih Objek Penyentuh</legend>
+              <div class="radio-grid">
+                <div class="radio-item">
+                  <input type="radio" name="touch-material" id="mat-finger" value="finger" checked>
+                  <label for="mat-finger">
+                    <strong>Jari Telanjang</strong>
+                    <span>Konduktor ionik ter-<span lang="en">ground</span></span>
+                  </label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" name="touch-material" id="mat-wool" value="wool">
+                  <label for="mat-wool">
+                    <strong>Sarung Tangan Kain/Wol</strong>
+                    <span>Isolator tebal (jarak d besar)</span>
+                  </label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" name="touch-material" id="mat-glove-cond" value="conductive-glove">
+                  <label for="mat-glove-cond">
+                    <strong>Sarung Tangan Layar Sentuh</strong>
+                    <span>Serat benang perak/karbon konduktif</span>
+                  </label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" name="touch-material" id="mat-plastic" value="plastic">
+                  <label for="mat-plastic">
+                    <strong>Stylus Plastik Biasa</strong>
+                    <span>Isolator tanpa jalur muatan bebas</span>
+                  </label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" name="touch-material" id="mat-stylus" value="capacitive-stylus">
+                  <label for="mat-stylus">
+                    <strong>Stylus Kapasitif</strong>
+                    <span>Ujung karet konduktif + bodi logam</span>
+                  </label>
+                </div>
+                <div class="radio-item">
+                  <input type="radio" name="touch-material" id="mat-water" value="water">
+                  <label for="mat-water">
+                    <strong>Tetesan Air</strong>
+                    <span>Konduktor tidak ter-<span lang="en">ground</span> stabil</span>
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="lab-options">
+              <div class="checkbox-control">
+                <input type="checkbox" id="multitouch-toggle">
+                <label for="multitouch-toggle">Aktifkan Mode <span lang="en">Multi-Touch</span> (2 Titik Jari)</label>
+              </div>
+              <div class="preset-buttons">
+                <button type="button" class="btn-secondary" id="preset-center">Uji Pusat (3, 4)</button>
+                <button type="button" class="btn-secondary" id="preset-corner">Uji Sudut (1, 6)</button>
+                <button type="button" class="btn-secondary" id="preset-clear">Angkat Objek</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="lab-workspace">
+            <div class="sensor-frame">
+              <div class="sensor-header">
+                <span>Kisi <span lang="en">Mutual Capacitance</span> (Baseline <code>2,00 pF</code>)</span>
+                <span class="threshold-hint">Ambang Deteksi: <code>|ΔC| ≥ 0,18 pF</code></span>
+              </div>
+              <div id="sensor-grid" class="sensor-grid" role="group" aria-label="Kisi sensor kapasitif 6 baris kali 8 kolom. Klik, seret, atau tekan tombol simpul untuk menguji posisi sentuhan."></div>
+              <p class="sensor-caption">Sentuh/seret di atas kisi atau pilih simpul dengan keyboard (<kbd>Tab</kbd> &amp; <kbd>Enter</kbd>).</p>
+            </div>
+
+            <aside class="lab-telemetry" aria-label="Pembacaan Pengendali Sentuhan">
+              <div class="status-banner" id="lab-status-badge" data-state="detected">
+                <span id="lab-status-icon" aria-hidden="true">✓</span>
+                <strong id="lab-status-text">Sentuhan Terdeteksi</strong>
+              </div>
+
+              <div class="signal-meter">
+                <div class="signal-labels">
+                  <span>Perubahan Sinyal Maksimum (|ΔCₘ|)</span>
+                  <strong id="lab-delta-val">0,44 pF</strong>
+                </div>
+                <div class="signal-track" aria-hidden="true">
+                  <div class="signal-fill" id="lab-signal-fill"></div>
+                  <div class="signal-threshold" title="Ambang Deteksi 0,18 pF"></div>
+                </div>
+                <p class="signal-note">Garis batas putus-putus menandai ambang minimal <code>0,18 pF</code> agar <span lang="en">chip</span> menerima input sah.</p>
+              </div>
+
+              <dl class="coord-readout">
+                <div>
+                  <dt>Koordinat Terhitung (x, y)</dt>
+                  <dd id="lab-coords">Jari 1: (x = 4,0 , y = 3,0)</dd>
+                </div>
+                <div>
+                  <dt>Status Fisika Bahan</dt>
+                  <dd id="lab-material-desc">Ion elektrolit di kulit jari membelokkan medan tepi Tx→Rx ke tubuh (<span lang="en">ground</span>), menurunkan Cₘ di simpul sekitar sebesar 0,44 pF.</dd>
+                </div>
+              </dl>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== TAHAP 6 ==================== -->
+      <section class="step-section" id="tahap-6" data-step="6" aria-labelledby="tahap-6-heading">
+        <div class="step-header">
+          <span class="step-tag">Tahap 6 · Sarung Tangan &amp; Aplikasi Modern</span>
+          <h2 id="tahap-6-heading">Mengapa Sarung Tangan Biasa Tidak Berfungsi &amp; Penerapannya di Teknologi Modern</h2>
+          <p class="step-intro">
+            Pernah mencoba menggeser layar smartphone saat memakai sarung tangan kain atau wol tebal di tempat dingin? Layar nyaris tidak merespons. Dua konsep fisika berikut menjelaskan penyebab pastinya beserta inovasi penyelesaiannya.
+          </p>
+        </div>
+
+        <div class="three-col-grid">
+          <article class="concept-card">
+            <h3>1. Bahan Isolator Miskin Muatan Bebas</h3>
+            <p>
+              Kain wol, katun tebal, plastik, atau kulit sintetis adalah <strong>isolator listrik</strong>. Elektronnya terikat erat pada atom sehingga tidak ada ion atau muatan bebas yang dapat bergerak menanggapi medan listrik dari elektroda sensor.
+            </p>
+          </article>
+          <article class="concept-card">
+            <h3>2. Jarak Jari <em>d</em> Bertambah Jauh</h3>
+            <p>
+              Ketebalan sarung tangan menambah jarak pisah <code>d</code> antara kulit dan elektroda. Karena kuat medan tepi meluruh cepat terhadap jarak dan kapasitansi berbanding terbalik dengan jarak (<code>C ∝ 1/d</code>), perubahan <code>|ΔC|</code> jatuh ke kisaran <code>0,01–0,03 pF</code>—jauh di bawah ambang deteksi!
+            </p>
+          </article>
+          <article class="concept-card">
+            <h3>3. Solusi: Benang Konduktif &amp; <span lang="en">Glove Mode</span></h3>
+            <p>
+              <strong>Sarung tangan layar sentuh</strong> menyulam serat perak, tembaga, atau benang berlapis karbon di ujung jari untuk meneruskan medan dari kulit ke kaca. Beberapa ponsel juga menyediakan fitur <span lang="en">glove mode</span> yang menaikkan penguatan (<span lang="en">gain</span>) pengukur sinyal hingga mampu membaca perubahan tipis meski terhalang kain tipis.
+            </p>
+          </article>
+        </div>
+
+        <div class="comparison-banner">
+          <div class="comp-card">
+            <span class="comp-badge comp-fail">✕ Tidak Terdeteksi</span>
+            <h3>Sarung Tangan Kain/Wol Biasa</h3>
+            <p>Jarak kulit ke kaca naik menjadi 2–4 mm &amp; serat kain bersifat isolator → medan tepi tidak terhubung ke tubuh → <code>ΔC ≈ −0,02 pF</code> (diabaikan sensor).</p>
+          </div>
+          <div class="comp-card">
+            <span class="comp-badge comp-pass">✓ Terdeteksi Lancar</span>
+            <h3>Sarung Tangan Kapasitif</h3>
+            <p>Serat perak/karbon bersentuhan langsung dengan kulit di dalam dan kaca di luar → muatan tubuh tersambung ulang ke permukaan kaca → <code>ΔC ≈ −0,36 pF</code>.</p>
+          </div>
+        </div>
+
+        <div class="apps-section">
+          <h3>Pemanfaatan Gaya Coulomb &amp; Medan Listrik pada Teknologi Sehari-hari</h3>
+          <div class="four-col-grid">
+            <article class="app-card">
+              <h4>1. Smartphone &amp; Tablet <span lang="en">Multi-Touch</span></h4>
+              <p>Mengenali ketukan, geseran (<span lang="en">swipe</span>), dan cubitan zoom (<span lang="en">pinch-to-zoom</span>) hingga 10 jari sekaligus dengan respons kurang dari 10 milidetik.</p>
+            </article>
+            <article class="app-card">
+              <h4>2. <span lang="en">Trackpad</span> Laptop Modern</h4>
+              <p>Memetakan posisi dan luas area kontak jari di atas kisi kapasitif di bawah kaca <span lang="en">trackpad</span> untuk menggerakkan kursor dan gestur dua/tiga jari.</p>
+            </article>
+            <article class="app-card">
+              <h4>3. Sensor Sidik Jari Kapasitif</h4>
+              <p>Ribuan kapasitor mikro di bawah tombol/layar membedakan punggung sidik jari (<span lang="en">ridge</span>, jarak <code>d</code> sangat kecil → kapasitansi tinggi) dan lembah kulit (<span lang="en">valley</span>, celah udara → kapasitansi rendah).</p>
+            </article>
+            <article class="app-card">
+              <h4>4. Tombol Sentuh Tanpa Aus</h4>
+              <p>Dipakai pada kompor induksi, panel lift, dasbor mobil, dan mesin industri karena dapat disegel rapat di balik kaca/akrilik tahan air tanpa celah mekanis.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ==================== TAHAP 7 ==================== -->
+      <section class="step-section" id="tahap-7" data-step="7" aria-labelledby="tahap-7-heading">
+        <div class="step-header">
+          <span class="step-tag">Tahap 7 · Rangkuman, Tantangan, &amp; Kuis</span>
+          <h2 id="tahap-7-heading">Jawaban Panduan Diskusi, Analisis Konsep, &amp; Pertanyaan Tantangan</h2>
+          <p class="step-intro">
+            Bagian penutup ini merangkum jawaban terstruktur atas seluruh pertanyaan Topik 5, 4 pilar Analisis Konsep Fisika, pembahasan Pertanyaan Tantangan tentang benda netral, serta mini kuis untuk menguji pemahaman Anda.
+          </p>
+        </div>
+
+        <!-- Bagian A: Accordion 4 Pertanyaan Panduan -->
+        <section class="accordion-block" id="diskusi-accordion" aria-labelledby="diskusi-heading">
+          <div class="accordion-head">
+            <h3 id="diskusi-heading">A. Jawaban 4 Pertanyaan Panduan Topik 5</h3>
+            <button type="button" class="btn-secondary" commandfor="diskusi-accordion" command="--toggle-all" aria-expanded="false">
+              <span class="expand">Buka Semua</span>
+              <span class="collapse">Tutup Semua</span>
+            </button>
+          </div>
+
+          <details open>
+            <summary><span class="summary-title">1. Bagaimana smartphone mendeteksi sentuhan jari tanpa harus menekan layar?</span></summary>
+            <div class="details-body">
+              <p>
+                Di bawah kaca pelindung keras (<span lang="en">cover glass</span>) terdapat kisi elektroda transparan <strong>ITO</strong> berbentuk baris (Rx) dan kolom (Tx) yang memancarkan medan listrik lemah sedikit menembus permukaan kaca (<span lang="en">fringing field</span>). Ketika jari manusia yang bersifat konduktif menyentuh kaca, jari membelokkan dan mengganggu distribusi medan listrik tersebut sehingga mengubah nilai kapasitansi pada simpul yang disentuh. Perubahan muatan listrik inilah yang diukur <span lang="en">chip</span> pengontrol untuk menentukan koordinat <code>(x, y)</code> tanpa perlu kaca melengkung atau ditekan.
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="summary-title">2. Apa hubungan antara jari manusia, muatan listrik, dan medan listrik?</span></summary>
+            <div class="details-body">
+              <p>
+                Kulit dan jaringan tubuh manusia mengandung air dan ion elektrolit (<code>Na⁺</code>, <code>K⁺</code>, <code>Cl⁻</code>) yang dapat bergerak bebas sehingga tubuh manusia bertindak sebagai konduktor dengan kapasitas penampung muatan ke <span lang="en">ground</span> sekitar <code>100–200 pF</code>. Saat jari mendekati medan listrik layar, gaya Coulomb menarik muatan berlawanan di kulit jari menuju permukaan ujung jari (polarisasi/induksi elektrostatis) dan menciptakan jalur medan baru menuju tubuh manusia.
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="summary-title">3. Bagaimana sentuhan mengubah kapasitansi pada layar?</span></summary>
+            <div class="details-body">
+              <p>
+                Pada layar <span lang="en">multi-touch</span> modern (<span lang="en">mutual capacitance</span>), sebelum disentuh seluruh garis medan tepi dari elektroda pemancar <strong>Tx</strong> diterima oleh elektroda penerima <strong>Rx</strong> sehingga kapasitansi dasar terjaga (misalnya <code>2,00 pF</code>). Saat jari menyentuh kaca, sebagian garis medan (~20–25%) dialihkan ke jari menuju <span lang="en">ground</span> sehingga muatan terinduksi pada Rx menurun dan <strong>kapasitansi bersama Cₘ berkurang</strong>. (Sebaliknya pada arsitektur <span lang="en">self capacitance</span>, jari menambah jalur kapasitor paralel ke <span lang="en">ground</span> sehingga total kapasitansi elektroda justru meningkat.) Dalam kedua sistem, besar perubahan <code>|ΔC|</code> langsung memicu deteksi sentuhan.
+              </p>
+            </div>
+          </details>
+
+          <details>
+            <summary><span class="summary-title">4. Mengapa layar sentuh kapasitif umumnya tidak dapat dioperasikan menggunakan sarung tangan biasa?</span></summary>
+            <div class="details-body">
+              <p>
+                Sarung tangan kain, wol, atau kulit biasa merupakan <strong>isolator listrik</strong> yang tidak memiliki muatan bebas untuk menyalurkan gangguan medan listrik ke tubuh, sekaligus <strong>memperbesar jarak <em>d</em></strong> antara kulit dan kisi elektroda. Karena kuat medan tepi melemah tajam seiring jarak dan kapasitansi mengikuti <code>C ∝ 1/d</code>, perubahan kapasitansi yang dihasilkan sangat kecil (<code>~0,02 pF</code>) dan gagal melewati ambang batas deteksi sensor—kecuali memakai sarung tangan khusus dengan benang konduktif atau fitur <span lang="en">glove mode</span>.
+              </p>
+            </div>
+          </details>
+        </section>
+
+        <!-- Bagian B: 4 Pilar Analisis Konsep Fisika -->
+        <div class="pillars-block">
+          <h3>B. Ringkasan 4 Pilar Analisis Konsep Fisika</h3>
+          <div class="four-col-grid">
+            <article class="pillar-card">
+              <span class="pillar-num">1</span>
+              <h4>Identifikasi Fenomena</h4>
+              <p>Sentuhan jari ringan di permukaan kaca keras terdeteksi secara presisi melalui perubahan kapasitansi elektrostatis tanpa perpindahan/tekanan mekanis.</p>
+            </article>
+            <article class="pillar-card">
+              <span class="pillar-num">2</span>
+              <h4>Analisis Muatan</h4>
+              <p>Elektroda kolom Tx diberi muatan positif (<code>+Q</code>), menginduksi muatan negatif (<code>−Q</code>) pada baris Rx, sementara ion elektrolit di jari terpolarisasi menjadi konduktor netral terhubung ke tubuh.</p>
+            </article>
+            <article class="pillar-card">
+              <span class="pillar-num">3</span>
+              <h4>Analisis Gaya &amp; Medan Listrik</h4>
+              <p>Gaya Coulomb menggerakkan muatan di ujung jari sehingga sebagian garis medan listrik tepi (<span lang="en">fringing field</span>) dari Tx dibelokkan ke jari, mengurangi fluks ke Rx dan mengubah nilai kapasitansi.</p>
+            </article>
+            <article class="pillar-card">
+              <span class="pillar-num">4</span>
+              <h4>Aplikasi Modern</h4>
+              <p>Membentuk teknologi layar <span lang="en">multi-touch</span> smartphone/tablet, <span lang="en">trackpad</span> laptop, sensor sidik jari kapasitif, hingga tombol sentuh kaca anti-air.</p>
+            </article>
+          </div>
+        </div>
+
+        <!-- Bagian C: Pertanyaan Tantangan -->
+        <article class="challenge-card" aria-labelledby="challenge-heading">
+          <span class="challenge-tag">C. Pertanyaan Tantangan Kelas</span>
+          <h3 id="challenge-heading">Apakah suatu benda harus memiliki muatan listrik total (<span lang="en">net charge</span>) agar dapat mengalami gaya listrik?</h3>
+          <p class="challenge-prompt">
+            <em>Jelaskan jawaban Anda berdasarkan konsep gaya Coulomb, medan listrik, dan polarisasi muatan.</em>
+          </p>
+
+          <div class="challenge-actions" role="group" aria-label="Pilih jawaban awal Anda">
+            <button type="button" class="btn-secondary challenge-choice" data-choice="yes">Ya, benda harus bermuatan total</button>
+            <button type="button" class="btn-primary challenge-choice" data-choice="no">Tidak harus — benda netral tetap bisa mengalami gaya listrik</button>
+          </div>
+
+          <div id="challenge-answer" class="challenge-answer" hidden>
+            <p id="challenge-feedback" class="challenge-feedback"></p>
+            <div class="split-panel">
+              <div>
+                <h4>Pembuktian Fisika:</h4>
+                <ol class="ordered-explain">
+                  <li><strong>Polarisasi Muatan:</strong> Benda netral tetap berisi jumlah muatan positif dan negatif yang sama besar (<code>Σq = 0</code>). Saat berada di dalam medan listrik luar (misalnya di dekat muatan sumber <code>+Q</code> atau medan tepi layar sentuh), gaya Coulomb memisahkan muatan di dalam benda tersebut: muatan negatif tertarik lebih dekat ke sumber positif, sedangkan muatan positif terdorong ke sisi lebih jauh.</li>
+                  <li><strong>Medan Listrik Tidak Seragam:</strong> Kuat medan listrik melemah seiring bertambahnya jarak (<code>E ∝ 1/r²</code>). Karena ujung benda bermuatan negatif berada pada jarak lebih kecil (<code>r_dekat &lt; r_jauh</code>), besar gaya tarik jauh melampaui gaya tolak pada sisi sebaliknya: <strong>F_tarik &gt; F_tolak</strong>.</li>
+                  <li><strong>Gaya Resultan Tidak Nol:</strong> Meskipun muatan total benda tetap nol (netral), gaya totalnya tidak nol (<code>F_net = F_tarik − F_tolak &gt; 0</code>). Prinsip inilah yang membuat sisir bermuatan menarik potongan kertas netral, dan <strong>membuat jari tangan manusia yang netral tetap berinteraksi dengan medan listrik layar smartphone!</strong></li>
+                </ol>
+              </div>
+              <figure class="diagram-figure">
+                <svg role="img" viewBox="0 0 360 190" class="inline-svg" aria-label="Diagram polarisasi muatan pada benda netral dekat muatan sumber positif yang menghasilkan gaya tarik lebih besar daripada gaya tolak karena jarak lebih dekat.">
+                  <title>Diagram Polarisasi Muatan pada Benda Netral</title>
+                  <circle cx="72" cy="92" r="24" class="svg-plus-source" />
+                  <text x="72" y="98" text-anchor="middle" class="svg-charge-text">+Q</text>
+                  <text x="72" y="135" text-anchor="middle" class="svg-label-small">Sumber Medan</text>
+
+                  <rect x="172" y="58" width="144" height="68" rx="34" class="svg-neutral-body" />
+                  <text x="244" y="46" text-anchor="middle" class="svg-label-small">Benda Netral (Σq = 0) Terpolarisasi</text>
+                  <circle cx="202" cy="92" r="14" class="svg-minus-pole" />
+                  <text x="202" y="97" text-anchor="middle" class="svg-charge-text">−q</text>
+                  <circle cx="286" cy="92" r="14" class="svg-plus-pole" />
+                  <text x="286" y="97" text-anchor="middle" class="svg-charge-text">+q</text>
+
+                  <line x1="170" y1="84" x2="112" y2="84" class="svg-force-attract" />
+                  <text x="142" y="76" text-anchor="middle" class="svg-label-small">F tarik (r kecil → besar)</text>
+
+                  <line x1="318" y1="100" x2="348" y2="100" class="svg-force-repel" />
+                  <text x="244" y="148" text-anchor="middle" class="svg-caption-svg">Karena r_dekat &lt; r_jauh, maka F_tarik &gt; F_tolak (F_net ≠ 0)</text>
+                </svg>
+                <figcaption>Medan tak seragam menghasilkan gaya resultan tarik pada benda netral yang terpolarisasi.</figcaption>
+              </figure>
+            </div>
+          </div>
+        </article>
+
+        <!-- Bagian D: Mini Kuis 4 Soal -->
+        <section class="quiz-section" aria-labelledby="quiz-heading">
+          <h3 id="quiz-heading">D. Mini Kuis Cek Pemahaman (4 Soal)</h3>
+          <form id="mini-quiz" class="quiz-form">
+            <fieldset class="quiz-question" data-q="q1">
+              <legend>1. Bahan utama elektroda baris (Rx) dan kolom (Tx) pada layar sentuh agar tetap tembus pandang sekaligus menghantarkan listrik adalah...</legend>
+              <div class="quiz-options">
+                <label for="q1-a"><input type="radio" id="q1-a" name="q1" value="a"> Kaca aluminosilikat murni</label>
+                <label for="q1-b"><input type="radio" id="q1-b" name="q1" value="b"> <span lang="en">Indium Tin Oxide</span> (ITO)</label>
+                <label for="q1-c"><input type="radio" id="q1-c" name="q1" value="c"> Serat wol isolator</label>
+              </div>
+              <p class="quiz-feedback" id="q1-feedback" hidden></p>
+            </fieldset>
+
+            <fieldset class="quiz-question" data-q="q2">
+              <legend>2. Pada layar <span lang="en">mutual capacitance</span> (standar <span lang="en">multi-touch</span> modern), apa yang terjadi pada nilai kapasitansi bersama Cₘ saat jari menyentuh kaca?</legend>
+              <div class="quiz-options">
+                <label for="q2-a"><input type="radio" id="q2-a" name="q2" value="a"> Cₘ menurun karena sebagian medan listrik tepi dibelokkan ke jari (<span lang="en">ground</span>)</label>
+                <label for="q2-b"><input type="radio" id="q2-b" name="q2" value="b"> Cₘ tetap nol karena kaca pelindung tidak dapat menghantarkan listrik</label>
+                <label for="q2-c"><input type="radio" id="q2-c" name="q2" value="c"> Layar melengkung hingga elektroda atas menempel secara fisik ke elektroda bawah</label>
+              </div>
+              <p class="quiz-feedback" id="q2-feedback" hidden></p>
+            </fieldset>
+
+            <fieldset class="quiz-question" data-q="q3">
+              <legend>3. Mengapa sarung tangan kain wol tebal gagal mengoperasikan layar sentuh kapasitif biasa?</legend>
+              <div class="quiz-options">
+                <label for="q3-a"><input type="radio" id="q3-a" name="q3" value="a"> Kain wol bersifat isolator dan menambah jarak <em>d</em> sehingga |ΔC| di bawah ambang deteksi</label>
+                <label for="q3-b"><input type="radio" id="q3-b" name="q3" value="b"> Kain wol memancarkan medan magnet yang memadamkan sinyal layar OLED</label>
+                <label for="q3-c"><input type="radio" id="q3-c" name="q3" value="c"> Karena suhu sarung tangan terlalu dingin untuk mencairkan kaca sensor</label>
+              </div>
+              <p class="quiz-feedback" id="q3-feedback" hidden></p>
+            </fieldset>
+
+            <fieldset class="quiz-question" data-q="q4">
+              <legend>4. Apakah jari manusia harus bermuatan listrik total tidak nol (|q_total| &gt; 0) untuk bisa berinteraksi dengan medan listrik layar sentuh?</legend>
+              <div class="quiz-options">
+                <label for="q4-a"><input type="radio" id="q4-a" name="q4" value="a"> Ya, benda netral sama sekali kebal terhadap gaya Coulomb</label>
+                <label for="q4-b"><input type="radio" id="q4-b" name="q4" value="b"> Tidak harus; muatan ion di jari mengalami polarisasi dalam medan listrik tidak seragam sehingga timbul gaya total</label>
+                <label for="q4-c"><input type="radio" id="q4-c" name="q4" value="c"> Ya, pengguna harus menyentuh baterai terlebih dahulu agar jari bermuatan positif</label>
+              </div>
+              <p class="quiz-feedback" id="q4-feedback" hidden></p>
+            </fieldset>
+
+            <div class="quiz-actions">
+              <button type="submit" class="btn-primary">Periksa Jawaban</button>
+              <button type="button" id="quiz-reset" class="btn-secondary">Ulangi Kuis</button>
+              <p id="quiz-score" class="quiz-score" hidden></p>
+            </div>
+          </form>
+        </section>
+      </section>
+    </div>
+
+    <div id="focus-toolbar-bottom" class="focus-toolbar" hidden>
+      <button type="button" class="btn-secondary focus-prev" data-focus-nav="prev">← Sebelumnya</button>
+      <span class="focus-status" id="focus-status-bottom">Tahap 1 dari 7</span>
+      <button type="button" class="btn-primary focus-next" data-focus-nav="next">Berikutnya →</button>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>
+      Media Pembelajaran Interaktif <strong>Topik 5: Layar Sentuh Smartphone (<span lang="en">Capacitive Touchscreen</span>)</strong> · Diskusi Fisika Dasar: Gaya Coulomb dan Medan Listrik.
+    </p>
+  </footer>
+</body>
+</html>
